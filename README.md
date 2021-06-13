@@ -24,7 +24,7 @@ and execute ``ansible-galaxy install -r requirements.yml``
 ## Usage
 
 ```
-- hosts: minecraft
+- hosts: all
   roles:
      - { role: nolte.msopenjdk }
 ```
