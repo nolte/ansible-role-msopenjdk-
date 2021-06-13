@@ -1,7 +1,7 @@
 Ansible Role MSOpenJDK
 =========
 
-[![molecule e2e](https://github.com/nolte/ansible-role-msopenjdk/workflows/molecule%20e2e/badge.svg)](https://github.com/nolte/ansible-role-msopenjdk/actions?query=workflow%3A%22molecule+e2e%22) [![](https://img.shields.io/github/release/nolte/ansible-role-msopenjdk.svg)](https://github.com/nolte/ansible-role-msopenjdk)
+[![molecule e2e](https://github.com/nolte/ansible-role-msopenjdk/workflows/molecule%20e2e/badge.svg)](https://github.com/nolte/ansible-role-msopenjdk/actions?query=workflow%3A%22molecule+e2e%22) [![](https://img.shields.io/github/release/nolte/ansible-role-msopenjdk.svg)](https://github.com/nolte/ansible-role-msopenjdk) [![Install from Ansible Galaxy](https://img.shields.io/badge/role-nolte.msopenjdk-blue.svg)](https://galaxy.ansible.com/nolte/ansible-role-msopenjdk)
 
 ---
 
