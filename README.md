@@ -28,3 +28,31 @@ and execute ``ansible-galaxy install -r requirements.yml``
   roles:
      - { role: nolte.msopenjdk }
 ```
+
+By default we install a jdk 16, you can change this by edit the `jdk_used_version` variable possible Values are (`11` and `16`).
+
+### Role Parameters 
+
+| Value               | Default                                                                                       | Description                                                                   |
+|---------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| `jdk_used_version`  | `16`                                                                                          | Used JDk Version, supported Values are `11` and `16`.                         |
+| `archiveFolderName` | `{{ jdk_versions[_jdk_used_version].archiveFolderName }}`                                     | Folder Name inside the Archive, used for build the Link to the java binaries. |
+| `downloadUrl`       | `https://aka.ms/download-jdk/{{ jdk_versions[_jdk_used_version].archiveName }}`               | Download Url for the JDK Archive.                                             |
+| `checksumUrl`       | `https://aka.ms/download-jdk/{{ jdk_versions[_jdk_used_version].archiveName }}.sha256sum.txt` | Text file with `sha256sum` informations.                                      |
+
+## Development
+
+For development and testing we use [molecule](https://molecule.readthedocs.io/en/latest/) in combination with docker.
+
+```sh
+
+# for install jdk 11 at molecule run
+export MOLECULE_JDK_USED_VERSION="11"
+
+molecule test
+
+```
+
+## Links
+
+* Used at [nolte/ansible-minecraft](https://github.com/nolte/ansible-minecraft).

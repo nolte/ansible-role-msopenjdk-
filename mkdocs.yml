@@ -1,4 +1,10 @@
 site_name: ansible-role-msopenjdk
+
+# Repository
+repo_name: nolte/ansible-role-msopenjdk
+repo_url: https://github.com/nolte/ansible-role-msopenjdk
+edit_uri: ""
+
 theme:
   name: 'material'
 docs_dir: docs/
