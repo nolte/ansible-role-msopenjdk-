@@ -23,7 +23,7 @@ provisioner:
   inventory:
     group_vars:
       all:  
-       jdk_used_version: ${MOLECULE_JDK_USED_VERSION:-"11"}
+       jdk_used_version: ${MOLECULE_JDK_USED_VERSION:-"16"}
   lint:
     name: ansible-lint
     enabled: false
