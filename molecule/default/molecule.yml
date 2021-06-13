@@ -1,13 +1,8 @@
 ---
 dependency:
   name: galaxy
-#  options:
-#    role-file: ./molecule/resources/playbooks/requirements.yml
 driver:
   name: docker
-#lint:
-#  name: yamllint
-#  enabled: false
 platforms:
   - name: debianbuster
     image: jrei/systemd-debian:10
@@ -17,18 +12,18 @@ platforms:
     image: "ubuntu:focal"
   - name: ubuntu-groovy-2010
     image: "ubuntu:groovy"
-#  - name: ubuntu-hirsute-2104
-#    image: "ubuntu:hirsute"
   - name: fedora
     image: fedora:29
   - name: centos7
     image: centos:7
   - name: centos8
-    image: centos:8    
+    image: centos:8
 provisioner:
   name: ansible
-#  playbooks:
-#    converge: ../resources/playbooks/playbook.yml
+  inventory:
+    group_vars:
+      all:  
+       jdk_used_version: ${MOLECULE_JDK_USED_VERSION:-"11"}
   lint:
     name: ansible-lint
     enabled: false
@@ -44,7 +39,3 @@ scenario:
 verifier:
   name: testinfra
   directory: ./../../tests/
-#  additional_files_or_dirs:
-#    - ../tests_vanilla/
-#  lint:
-#    name: flake8
