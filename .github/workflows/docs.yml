@@ -20,7 +20,7 @@ jobs:
           architecture: "x64"
 
       - name: Deploy docs
-        uses: afritzler/mkdocs-gh-pages-action@v1.0.20
+        uses: afritzler/mkdocs-gh-pages-action@v7.3.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REQUIREMENTS: ./requirementsDocs.txt
