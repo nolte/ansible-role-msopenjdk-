@@ -6,12 +6,12 @@ driver:
 platforms:
   - name: debianbuster
     image: jrei/systemd-debian:10
+  - name: debianbullseye
+    image: jrei/systemd-debian:11    
   - name: ubuntu18
     image: solita/ubuntu-systemd:18.04
   - name: ubuntu-focal-2004
     image: "ubuntu:focal"
-  - name: ubuntu-groovy-2010
-    image: "ubuntu:groovy"
   - name: fedora
     image: fedora:29
   - name: centos7
