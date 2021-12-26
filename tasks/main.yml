@@ -5,6 +5,10 @@
     path: /usr/lib/jvm
     state: directory
 
+- name: print download url
+  debug:
+    msg: "Try to use OpenJDK Version from {{ downloadUrl }}"
+
 - name: Download file with checksum url (sha256)
   get_url:
     url: "{{ downloadUrl }}"
@@ -17,6 +21,7 @@
     src: "{{ openjdk_archive.dest }}"
     dest: /usr/lib/jvm
     remote_src: true
+  when: openjdk_archive.changed
 
 - name: Correct java version selected
   community.general.alternatives:
