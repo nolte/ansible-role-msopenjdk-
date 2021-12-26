@@ -19,6 +19,7 @@ jobs:
         jdk-version: 
           - 11
           - 16
+          - 17
     steps:
      - uses: actions/checkout@v2.3.4
 
@@ -27,12 +28,16 @@ jobs:
          python-version: "${{ matrix.python-version }}"
          architecture: 'x64'
 
-     - name: Install dependencies
-       run: |
-         python -m pip install --upgrade pip
-         pip install -r ./requirementsDev.txt
-
-     - name: Test with molecule
-       run: molecule test
+     - uses: gofrolist/molecule-action@v2
        env:
-        MOLECULE_JDK_USED_VERSION: "${{ matrix.jdk-version }}"
+          MOLECULE_JDK_USED_VERSION: "${{ matrix.jdk-version }}"
+
+     #- name: Install dependencies
+     #  run: |
+     #    python -m pip install --upgrade pip
+     #    pip install -r ./requirementsDev.txt
+#
+     #- name: Test with molecule
+     #  run: molecule test
+     #  env:
+     #   MOLECULE_JDK_USED_VERSION: "${{ matrix.jdk-version }}"
