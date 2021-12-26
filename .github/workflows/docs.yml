@@ -7,20 +7,9 @@ on:
       - feature/cicd
 
 jobs:
-  build:
-    name: Deploy docs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout main
-        uses: actions/checkout@v2
-
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.8.5
-          architecture: "x64"
-
-      - name: Deploy docs
-        uses: afritzler/mkdocs-gh-pages-action@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REQUIREMENTS: ./requirementsDocs.txt
+  publish_docs:
+    uses: nolte/gh-plumbing/.github/workflows/reuseable-mkdocs.yaml@develop
+    with:
+      requirements: "/requirementsDocs.txt"
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
