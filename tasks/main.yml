@@ -16,7 +16,7 @@
     checksum: sha256:{{ checksumUrl }}
   register: openjdk_archive
 
-- name: Unarchive ms openjdk 
+- name: Unarchive ms openjdk
   ansible.builtin.unarchive:
     src: "{{ openjdk_archive.dest }}"
     dest: /usr/lib/jvm

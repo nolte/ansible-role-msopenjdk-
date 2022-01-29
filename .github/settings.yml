@@ -5,6 +5,6 @@ _extends: gh-plumbing:.github/commons-settings.yml
 
 repository:
   name: ansible-role-msopenjdk
-  description: Ansible Role for install the 
+  description: Ansible Role for install the Microsoft OpenJDK from Archive.
   homepage: https://nolte.github.io/ansible-role-msopenjdk
   topics: ansible, ansible-role, openjdk

@@ -1,14 +1,11 @@
 name: Publish docs via GitHub Pages
 on:
-  push:
-    branches:
-      - main
-      - master
-      - feature/cicd
+  release:
+    types: [published]
 
 jobs:
   publish_docs:
-    uses: nolte/gh-plumbing/.github/workflows/reuseable-mkdocs.yaml@v1.0.3
+    uses: nolte/gh-plumbing/.github/workflows/reuseable-mkdocs.yaml@v1.0.5
     with:
       requirements: "./requirementsDocs.txt"
     secrets:

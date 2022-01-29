@@ -10,4 +10,3 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_java_package_exists(host):
     cmd = host.run("java --version")
     assert cmd.rc == 0
-
