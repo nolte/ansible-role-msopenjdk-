@@ -7,7 +7,7 @@ platforms:
   - name: debianbuster
     image: jrei/systemd-debian:10
   - name: debianbullseye
-    image: jrei/systemd-debian:11    
+    image: jrei/systemd-debian:11
   - name: ubuntu18
     image: solita/ubuntu-systemd:18.04
   - name: ubuntu-focal-2004
@@ -15,14 +15,15 @@ platforms:
   - name: fedora
     image: fedora:29
   - name: centos7
-    image: centos:7
+    image: quay.io/centos/centos:centos7
   - name: centos8
-    image: centos:8
+    image: quay.io/centos/centos:stream8
+
 provisioner:
   name: ansible
   inventory:
     group_vars:
-      all:  
+      all:
        jdk_used_version: ${MOLECULE_JDK_USED_VERSION:-"16"}
   lint:
     name: ansible-lint
