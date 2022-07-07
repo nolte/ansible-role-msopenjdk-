@@ -38,11 +38,11 @@ jobs:
          python -m pip install --upgrade pip
          ls -all
          pwd
-         pip install -r $GITHUB_WORKSPACE/requirementsDev.txt
+         pip install -r ./nolte/ansible-role-msopenjdk/requirementsDev.txt
 #
      - name: Test with molecule
        run: |
-         cd $GITHUB_WORKSPACE
+         cd ./nolte/ansible-role-msopenjdk
          molecule test
        env:
         MOLECULE_JDK_USED_VERSION: "${{ matrix.jdk-version }}"
