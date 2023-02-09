@@ -15,7 +15,7 @@ jobs:
       max-parallel: 5
       fail-fast: false
       matrix:
-        python-version: [3.8.5]
+        python-version: [3.11.1]
         jdk-version:
           - 11
           - 16
