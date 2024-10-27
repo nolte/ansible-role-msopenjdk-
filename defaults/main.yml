@@ -1,6 +1,6 @@
 ---
 
-jdk_used_version: "17"
+jdk_used_version: "21"
 
 _jdk_used_version: "{{ jdk_used_version | trim }}"
 
@@ -15,6 +15,9 @@ jdk_versions:
   "17":
     archiveFolderName: jdk-17.0.3+7
     archiveName: microsoft-jdk-17.0.3-linux-x64.tar.gz
+  "21":
+    archiveFolderName: jdk-21.0.5+11
+    archiveName: microsoft-jdk-21.0.5-linux-x64.tar.gz   
 
 
 archiveFolderName: "{{ jdk_versions[_jdk_used_version].archiveFolderName }}"
